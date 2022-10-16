@@ -23,9 +23,9 @@ int _printf(const char *format, ...)
 			f = selectFunc(format[i]);
 			if (f == NULL)
 				/*pass character to function for case where no specifier*/
-				totalPrints += nullFunc(format[i]);
+				totalPrints += nullCase(format[i]);
 			else
-				totalPrints += f(arguements)/*pass selected function variadic list*/
+				totalPrints += f(arguements);/*pass selected function variadic list*/
 		}
 		else if (format[i] == '%' && format[i] == '\0')
 		{

@@ -18,4 +18,5 @@ int printChar(va_list arguement);
 int printString(va_list arguement);
 int nullCase(char c);
 int (*selectFunc(char s))(va_list);
+int _printf(const char *format, ...);
 #endif

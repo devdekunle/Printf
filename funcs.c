@@ -9,7 +9,7 @@ int printString(va_list arguements)
 	char *string;
 	int i;
 	/*variadic string arguements stored in string*/
-	string = va_arg(arguments, char *);
+	string = va_arg(arguements, char *);
 
 	if (string == NULL)
 		string = "(null)";

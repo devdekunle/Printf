@@ -14,7 +14,7 @@ int (*selectFunc(char s))(va_list)
 	};
 	int i = 0;
 
-	while (linkin[i] != '\0')
+	while (linkin[i].ch != '\0')
 	{
 		if (linkin[i].ch == s)/*return pointer to function if s == ch*/
 		{
