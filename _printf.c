@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{	i++;/*go to next character after finding % sign*/
 		/*pass the character to select function for specifer*/
-			f = funcSelect(format[i]);
+			f = selectFunc(format[i]);
 			if (f == NULL)
 				/*pass character to function for case where no specifier*/
 				totalPrints += nullFunc(format[i]);

@@ -58,3 +58,18 @@ int nullCase(char c)
 
 }
 
+
+/**
+ * printChar - Function to print character
+ * @arguements: Variadic arguements to print
+ * Return: just 1 since is a single charcter
+ */
+int printChar(va_list arguements)
+{
+	char character; /* varaible to store charcter pulled out by va_arg */
+
+	character = va_arg(arguements, int);
+	write(1, &character, 1);
+	return (1);
+}
+
