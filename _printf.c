@@ -7,15 +7,15 @@
 int _printf(const char *format, ...)
 {
 	va_list arguements; /*declare variadic list*/
-	int totalPrints= 0;
+	int totalPrints = 0;
 	int i = 0;
 	int (*f)(va_list);
 
 	va_start(arguements, format); /*initailize variadic list*/
-	
+
 	if (format == NULL)
-		return(-1);
-	while(format[i])
+		return (-1);
+	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{	i++;/*go to next character after finding % sign*/
@@ -24,19 +24,23 @@ int _printf(const char *format, ...)
 			if (f == NULL)
 				/*pass character to function for case where no specifier*/
 				totalPrints += nullFunc(format[i]);
-			else 
+			else
 				totalPrints += f(arguements)/*pass selected function variadic list*/
 		}
 		else if (format[i] == '%' && format[i] == '\0')
+		{
 			return (-1);/*error if charcter after % is '\0'*/
-		else 
+
+		}
+
+		else
 		{
 			/*print string literal if no % till null byte and add to total*/
 			write(1, &format[i], 1);
 			totalPrints++;
 		}
-	i++;
+		i++;
 	}
 	va_end(arguements);
-	return(totalPrints);
+	return (totalPrints);
 }

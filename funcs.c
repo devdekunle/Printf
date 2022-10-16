@@ -2,7 +2,7 @@
 /**
 *printString - print chain of characters
 *@arguements: variadic arguements to print
-*Return : number of characters printed
+*Return: number of characters printed
 */
 int printString(va_list arguements)
 {
@@ -19,14 +19,14 @@ int printString(va_list arguements)
 		write(1, &string[i], 1);
 	}
 	/*return number of prints*/
-	return(i);
+	return (i);
 
 }
 
 
 /**
 * nullCase - case where other special characters come after %
-*@ch: character passed as arguement
+*@c: character passed as arguement
 *Return: number
 */
 
@@ -35,23 +35,24 @@ int nullCase(char c)
 
 	char afterPercent = '%';
 
-	switch(c) {
-	case '\n':
-	/*if user wants % to show then new line*/
-		write(1, &afterPercent, 1);
-		write(1, &c, 1);
-		return (2);
-	case ' ':
-		write(1, &c, 1);/*print space after % sign*/
-		return (1);
-	case '%':
-		write(1, &c, 1);/*print % sign after %sign*/
-		return(1);
-	default:
-	/*any other character after % sign, print % sign and the character*/
-		write(1, &afterPercent, 1);
-		write(1, &c, 1);
-		return(2);
+	switch (c)
+	{
+		case '\n':
+		/*if user wants % to show then new line*/
+			write(1, &afterPercent, 1);
+			write(1, &c, 1);
+			return (2);
+		case ' ':
+			write(1, &c, 1);/*print space after % sign*/
+			return (1);
+		case '%':
+			write(1, &c, 1);/*print % sign after %sign*/
+			return (1);
+		default:
+		/*any other character after % sign, print % sign and the character*/
+			write(1, &afterPercent, 1);
+			write(1, &c, 1);
+			return (2);
 	}
 	return (0);
 
