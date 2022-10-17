@@ -73,3 +73,75 @@ int printChar(va_list arguements)
 	return (1);
 }
 
+/**
+ * print_rev_string - print string in reverse
+ * @arguements: variadic arguements to print
+ * Return: Numbers of characters printed
+ */
+int print_rev_string(va_list arguements)
+{
+	char *string;/*to store string pulled out by va_arg*/
+	int num = 0;/*to store number of characters printed in reverse*/
+	int i, j;
+
+	string = va_arg(arguements, char *);
+	if (string == NULL)
+		string = "(null)";
+	for (i = 0; string[i]; i++)/*get string lenght*/
+		;
+	/*loop through string from end and write each charcter out in reverse*/
+	for (j = i - 1; j >= 0; j--)
+	{
+		write(1, &string[j], 1);
+		num++;
+	}
+	return (num);/*return total number of characters*/
+}
+
+/**
+ * printrot13 - Replace a char with another char which is at number 13 away
+ * @arguements: varaidic arguement to print
+ * Return: total number of characters printed out by write
+ */
+int printrot13(va_list arguements)
+{
+	char *string;/*varaible to store string pulled out by va_arg */
+	unsigned int i, j;
+	int count = 0;/*to count number of char writed to output by write */
+	/**
+	 * each char in c1 is a rot13 of each char in c2 in same position
+	 * example, A is to N, R is to E, m is to z and so on...
+	 */
+	char c1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char c2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	string = va_arg(arguements, char *);
+	if (string == NULL)
+		string = "(null)";
+	for (i = 0; string[i]; i++)/*check weather is a character*/
+	{
+		for (j = 0; c1[j]; j++)
+		{
+			/*if char in string is same as char in c1*/
+			if (string[i] == c1[j])
+			{
+				/*write out is equivalent rot13 in c2 */
+				write(1, &c2[j], 1);
+				count++;/*and icrease count by 1 */
+				break;
+			}
+		}
+		/**
+		 * Even if the char in string does not match any char in c2
+		 * write it out and increase count by 1 since we need total
+		 * count
+		 */
+		if (!c1[j])
+		{
+			write(1, &string[i], 1);
+			count++;
+		}
+	}
+	return (count);/*return total count after everthying */
+}
+
