@@ -14,6 +14,7 @@ struct link
 typedef struct link SL;
 
 /*pointer protoypes*/
+int _putchar(char c);
 int printChar(va_list arguement);
 int printString(va_list arguement);
 int nullCase(char c);
