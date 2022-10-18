@@ -5,11 +5,12 @@
 *Return: number of characters and numbers printed
 */
 
-int printNum(va_list arguement)
+int printNumber(va_list arguement)
 {
 	int numArray[10]; /*array to store each integer dissected from numArg*/
 	int i, maxDiv, numArg, count, sum;
 
+	count = 0;
 	numArg = va_arg(arguement, int); /*assume numArg is INT_MAX*/
 	maxDiv = 1000000000; /*number to divide INT_MAX to get 1st digit in INT_MAX*/
 	numArray[0] = numArg / maxDiv; /*store the first character from INT_MAX*/
@@ -26,19 +27,19 @@ int printNum(va_list arguement)
 		for (i = 0; i < 10; i++)
 			numArray[i] = numArray[i] * -1; 
 	}
-	for (i = 0, sum = 0; j < 10; j++)
+	for (i = 0, sum = 0; i < 10; i++)
 	{
 		sum += numArray[i];
 		if (i == 9 || sum != 0)
 		{
 			_putchar(numArray[i] + '0'); /*print each stored character*/
-			count++
+			count++;
 
 		}
 
-	return (count);
 	}
 
+	return (count);
 
 
 
