@@ -12,6 +12,8 @@ int (*selectFunc(char s))(va_list)
 		{'s', printString},
 		{'r', print_rev_string},
 		{'R', printrot13},
+		{'d', printNumber},
+		{'i', printNumber},
 		{'\0', NULL} /*for case where no match is found*/
 	};
 	int i = 0;
