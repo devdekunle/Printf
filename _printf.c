@@ -27,9 +27,9 @@ int _printf(const char *format, ...)
 			else
 				totalPrints += f(arguements);/*pass selected function variadic list*/
 		}
-		else if (format[i] == '%' && format[i] == '\0')
+		else if (format[i] == '%' && format[i + 1] == '\0')
 		{
-			return (-1);/*error if charcter after % is '\0'*/
+			return (-1);/*if character after % is '\0'*/
 
 		}
 

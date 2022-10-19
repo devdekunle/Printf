@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*printNum - print integers
+*printNumber - print integers
 *@arguement: variadic list to print number from
 *Return: number of characters and numbers printed
 */
@@ -25,7 +25,7 @@ int printNumber(va_list arguement)
 		_putchar('-');
 		count++; /*count the - sign*/
 		for (i = 0; i < 10; i++)
-			numArray[i] = numArray[i] * -1; 
+			numArray[i] = numArray[i] * -1;
 	}
 	for (i = 0, sum = 0; i < 10; i++)
 	{
