@@ -48,13 +48,13 @@ int printNumber(va_list arguement)
 
 /**
 *print_u - print unsigned integers
-*@ arguement: variadic list
+*@arguement: variadic list
 *Return: count
 */
 
 int print_u(va_list arguement)
 {
-	unsigned int numArray[10]; /*array to store each integer dissected from numArg*/
+	unsigned int numArray[10]; /*array to store each integer from numArg*/
 	unsigned int i, maxDiv, numArg, sum;
 	int count;
 
