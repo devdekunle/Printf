@@ -24,4 +24,5 @@ int print_rev_string(va_list arguement);
 int printrot13(va_list arguement);
 int printNumber(va_list arguement);
 int print_u(va_list arguement);
+int printBinary(va_list arguement);
 #endif
