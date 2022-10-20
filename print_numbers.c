@@ -95,7 +95,7 @@ int print_u(va_list arguement)
 */
 int printBinary(va_list arguement)
 {
-	unsigned int numarray[32], i, num, sum, varNum;
+	unsigned int numArray[32], i, num, sum, varNum;
 	int count;
 
 	sum = 0;
@@ -111,9 +111,11 @@ int printBinary(va_list arguement)
 		numArray[i] = (varNum / num) % 2;
 
 	}
-	for (i = 31; i >= 0; i--)
+	for (i = 0; i < 32; i++)
 	{
-		_putchar(numArray[i]);
+		sum += numArray[i];
+		if (sum || i == 31)
+		_putchar(numArray[i] + '0');
 		count++;
 
 	}
