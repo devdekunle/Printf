@@ -98,31 +98,26 @@ int printBinary(va_list arguement)
 	unsigned int numarray[32], i, num, sum, varNum;
 	int count;
 
-	sum = count = 0;
+	sum = 0;
+	count = 0;
 
 	varNum = va_arg(arguement, unsigned int);
 	num = 2147483648; /* multiplying two 31 times*/
 	numArray[0] = varNum / num;
-	for (i =1; i < 32; i++)
+	for (i = 1; i < 32; i++)
 	{
 		num /= 2;
 		/*store remainder of division in array*/
 		numArray[i] = (varNum / num) % 2;
 
 	}
-	for (i = 0; i < 32; i++)
+	for (i = 31; i >= 0; i--)
 	{
-		sum  += numArray[i]; /*sum all elements of array*/
-		if (sum || i == 31)
-		{
-			/*print each stores binary digit*/
-			_putchar(numArray[i] + '0');
-			count++;
-
-		}
-
+		_putchar(numArray[i]);
+		count++;
 
 	}
+
 
 
 
