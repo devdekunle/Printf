@@ -16,6 +16,10 @@ int (*selectFunc(char s))(va_list)
 		{'i', printNumber},
 		{'u', print_u},
 		{'b', printBinary},
+		{'p', print_p},
+		{'x', print_x},
+		{'X', print_X},
+		{'o', print_o},
 		{'\0', NULL} /*for case where no match is found*/
 	};
 	int i = 0;
