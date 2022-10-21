@@ -1,4 +1,4 @@
-Simulation of the C printf function.
+Simulation of the C printf function./group project
 
 FORMAT SPECIFIERS AND THEIR DESCRIPTION
 
